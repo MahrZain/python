@@ -1,3 +1,81 @@
-h1{
-    color: red;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+}
+.announcement-head {
+  margin: 0;
+  height: 50px;
+  background-color: #212121;
+  position: relative;
+}
+.announcement-text {
+  font-family: Montserrat, sans-serif;
+  margin-top: 0px;
+  width: 100%;
+  position: absolute;
+  top: -11px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.announcement-text a {
+  text-decoration: none;
+  text-decoration: underline;
+  color: #ffa500;
+}
+
+.announcement-tex > img {
+  color: white;
+}
+.container {
+  background-color: #e2e3e7;
+}
+.primary-nav {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-menu {
+  display: flex;
+  justify-content: center;
+}
+.nav-menu ul {
+  display: flex;
+}
+.nav-menu ul li {
+  list-style: none;
+  list-style-type: none;
+}
+.nav-menu ul li a {
+  text-decoration: none;
+  margin: 5px;
+  color: black;
+  font-family: Montserrat, sans-serif;
+  padding: 5px;
+  position: relative; /* Required for the pseudo-element positioning */
+}
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1.5px;
+  background-color: black;
+  left: 50%;
+  bottom: 0;
+  transition: width 0.3s, left 0.3s;
+}
+.nav-menu a:hover::after {
+  width: 100%;
+  left: 0px;
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 110, "opsz" 99;
+}
+.seco-nav {
+  height: 20;
+  margin: 5px;
+  padding: 5px;
 }
