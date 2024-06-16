@@ -79,3 +79,124 @@ body {
   margin: 5px;
   padding: 5px;
 }
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.primary-footer {
+  margin-top: 10px;
+  background-color: #212121;
+  height: auto;
+  width: 100%;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  display: flex;
+  font-style: normal;
+}
+.footer-nav1 {
+  background-color: #212121;
+  width: 33.33%;
+}
+.footer-nav1 h2 {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.footer-nav1 ul li {
+  list-style-type: none;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  margin: 15px;
+}
+.footer-nav1 ul li a {
+  list-style-type: none;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+.footer-nav2 {
+  background-color: #212121;
+  width: 33.33%;
+}
+.footer-nav2 h2 {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.footer-nav2 p {
+  padding-left: 65px;
+  margin-left: 91px;
+  margin: 10px;
+  padding-inline: 11px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  display: flex;
+  font-style: normal;
+}
+
+.footer-nav2 ul li {
+  list-style-type: none;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.footer-nav2 ul li a {
+  list-style-type: none;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+.footer-nav3 {
+  background-color: #212121;
+  width: 33.33%;
+}
+.footer-nav3 h2 {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.footer-nav3 a {
+  margin: 15px;
+  display: block;
+  list-style-type: none;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.footer-nav3 address {
+  padding-left: 114px;
+}
+.hr {
+  height: 40px;
+  width: 100%;
+  background-color: #212121;
+  display: inline-block;
+}
+.copy-right {
+  float: right;
+}
+.copy-right a {
+  text-decoration: none;
+  color: white;
+  font-size: small;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.copy-right :first-child {
+  margin-right: 15px;
+}
+.copy-right a:nth-child(2) {
+  margin-right: 10px;
+}
