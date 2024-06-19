@@ -1,3 +1,33 @@
 {% include 'header.html'%}
-<main><h1>Contact Us</h1></main>
+<main>
+    <div class="container">
+        <h1 class="main-contact-h1">Contact us</h1>
+        <p class="sec-contact-p">Do you have any questions regarding your beard or do you need suggestions for <br>
+            products? Reach out to us at: support@darimooch.com or call us at +92 316 1115556.</p>
+    </div>
+    <div class="container">
+        <div class="contact-form-menu">
+            <form action="action_page.php">
+
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+
+
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+               <div class="button-main">
+                <input class="Send-button" type="Send" value="Send">
+               </div>
+               <!-- /.button-main -->
+
+            </form>
+        </div>
+        <!-- /.contact-form-menu -->
+    </div>
+</main>
 {% include 'footer.html'%}

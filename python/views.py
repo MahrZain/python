@@ -9,3 +9,5 @@ def login(request):
     return render(request, 'login.html')
 def contact(request):
     return render(request, 'contact.html')
+def faq(request):
+    return render(request , 'faq.html')

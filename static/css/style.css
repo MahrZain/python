@@ -30,7 +30,7 @@ body {
   color: white;
 }
 .container {
-  background-color: #e2e3e7;
+  background-color:#E4E3E8;
 }
 .primary-nav {
   height: auto;
@@ -178,10 +178,11 @@ body {
   padding-left: 114px;
 }
 .hr {
+  position: absolute;
   height: 60px;
   margin-bottom: 30px;
   width: 100%;
-  background-color: #212121;
+  background-color: #fcfcfc;
   display: inline-block;
 }
 .copy-right {
@@ -198,6 +199,9 @@ body {
 }
 .copy-right :first-child {
   margin-right: 15px;
+}
+.main-img-header{
+  margin-right: -93px;
 }
 .copy-right a:nth-child(2) {
   margin-right: 10px;
@@ -328,8 +332,9 @@ strike {
   margin-bottom: 40px;
   position: absolute;
 }
+
 .announcement-text{
-  margin-top: 23px;
+  margin-top: 24px;
   /*padding-top: 40px; */
 }
 .input-box {
@@ -357,4 +362,66 @@ strike {
 }
 #carouselExampleRide {
   margin-top: 10px;
+}
+.main-heading{
+  text-align: center; 
+  display: block;
+  margin-bottom: 100px;
+}
+.second-heading{
+  font-style: bold;
+}
+.main-contact-h1{
+  text-align: center;
+  margin-bottom: 40px;
+
+}
+.sec-contact-p{
+text-align: center;
+margin-bottom: 50px;
+}
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #E4E3E8;
+  padding: 20px;
+}
+.button-main{
+  display: block;
+}
+.Send-button{
+  background-color: black; 
+  color:white;
+  border: none;
+  border-radius: none;
+  justify-content: center;
+  text-align: center;
+  width: 20%;
 }
