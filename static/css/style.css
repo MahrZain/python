@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 body {
   padding: 0;
@@ -79,7 +80,7 @@ body {
   margin: 5px;
   padding: 5px;
 }
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 * {
   margin-left: 0;
   margin-right: 0;
@@ -177,7 +178,8 @@ body {
   padding-left: 114px;
 }
 .hr {
-  height: 40px;
+  height: 60px;
+  margin-bottom: 30px;
   width: 100%;
   background-color: #212121;
   display: inline-block;
@@ -199,4 +201,160 @@ body {
 }
 .copy-right a:nth-child(2) {
   margin-right: 10px;
+}
+/* BODY CUSTOM CSS FILE HERE */
+
+body {
+  background-color: #e4e3e8 !important;
+  margin: 0;
+  padding: 0;
+}
+.btn-primary {
+  color: rgb(0, 0, 0) !important;
+  background-color: #ffffff !important;
+  border: 1.5px solid black !important;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  background-color: #e4e3e8 !important;
+  border-radius: 0 !important;
+}
+.btn-primary:hover {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  background-color: #e4e3e8;
+  color: rgb(255, 255, 255) !important;
+  background-color: black !important;
+}
+.heading {
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  margin-top: 10px;
+}
+.all-cards {
+  display: flex;
+  padding: 1px;
+  margin: 30px;
+  justify-content: center;
+}
+.all-cards {
+  margin: 10px;
+  background-color: #e4e3e8;
+  margin: 0;
+  padding: 0;
+}
+.card1 {
+  width: 33.33%;
+  margin-left: 60px;
+}
+.card2 {
+  width: 33.33%;
+}
+.card3 {
+  width: 33.33%;
+}
+.card-body {
+  background-color: #e4e3e8;
+}
+.card-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  background-color: #e4e3e8;
+}
+.price {
+  color: #ca4445;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  margin-left: 27px;
+  background-color: #e4e3e8;
+  display: inline-flex;
+}
+strike {
+  color: #757474;
+}
+.card-text {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+.sec-product-carousel {
+  margin: 0;
+  justify-content: center;
+}
+.sale-box {
+  height: 33px;
+  width: 221px;
+  float: right;
+  color: black !important;
+}
+.position-relative {
+  margin-left: 212px;
+  width: 88px;
+  height: 6vh;
+  background-color: black !important;
+  color: white !important;
+}
+.second-banner img {
+  max-width: 100%;
+  height: auto;
+}
+.black-box {
+  position: absolute;
+  display: flex;
+  padding-bottom: 100px;
+}
+.new-letter-box {
+  height: 200px;
+  width: 95vw;
+  background-color: black;
+  justify-items: center;
+  text-align: center;
+  margin-left: 2vw;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: absolute;
+}
+.announcement-text{
+  margin-top: 23px;
+  /*padding-top: 40px; */
+}
+.input-box {
+  position: relative;
+  top: 9px;
+  margin-left: 298px;
+  margin-top: 90px;
+  color: white;
+}
+.input-box input {
+  width: 35vw;
+  height: 9vh;
+  border-radius: 0px solid black;
+}
+.input-box button {
+  margin-left: 60px;
+  background-color: black;
+  border-radius: 0px;
+  border: 0px;
+  color: white;
+}
+.all-cards-sec {
+  margin-top: 19px;
+  margin-bottom: 20px;
+}
+#carouselExampleRide {
+  margin-top: 10px;
 }
