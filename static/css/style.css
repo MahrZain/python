@@ -414,7 +414,8 @@ input[type=submit]:hover {
 }
 
 /* Add a background color and some padding around the form */
-.container {
+.container-last {
+  margin-top: 25px;
   border-radius: 5px;
   background-color: #E4E3E8;
   padding: 20px;
@@ -430,4 +431,30 @@ input[type=submit]:hover {
   justify-content: center;
   text-align: center;
   width: 20%;
+}
+.last-news-letter{
+  background-color: black;
+  height: 34vh;
+  width: 100%;
+  border-radius: 5px;
+}
+.news-letter-heading{
+  text-align: center;
+  color: white;
+  padding-top: 11px;
+  padding-bottom: 20px;
+}
+.email-input-box{
+  padding-left: 27px;
+  margin-left: 222px;
+  width: 90vh;
+  height: 9vh;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+.email-input-box-button{
+  background-color: transparent;
+    color: white;
+    border: none;
+    padding-left: 62px;
 }
