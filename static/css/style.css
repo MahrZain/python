@@ -286,6 +286,9 @@ body {
   font-optical-sizing: auto;
   font-weight: 400px;
   font-style: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
   background-color: #e4e3e8;
 }
 .price {
@@ -469,4 +472,16 @@ input[type=submit]:hover {
     display:flex;
     color: red;
   }
+}
+
+.product-info{
+  display: flex;
+  justify-content: space-evenly;
+}
+.sold-out p {
+  margin-top: 2px;
+    margin-bottom: 2rem;
+}
+.rate{
+  padding-bottom: 34px;
 }
