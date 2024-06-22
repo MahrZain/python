@@ -47,11 +47,11 @@
           {% for product in products %}
           <div class="col-md-3">
             <div class="card">
-              <img style="margin-left: 20%;" src="{{product.image}}" class="card-img-top" alt="">
+              <img style="margin-left: 20%; margin-top: 3%; padding-bottom: 3%;" src="{{product.image}}" class="card-img-top" alt="">
               <div class="card-body">
                 <h5 class="card-title">{{product.title}}</h5>
                 <p class="card-text">{{product.description}}</p>
-                <h5>{{product.price}}$</h5>
+                <h5>Price: {{product.price}}$</h5>
                 <div class="product-info">
                   <div class="sold-out"><p>Solid: {{product.rating.count}}</p></div>
                   <div class="rate">

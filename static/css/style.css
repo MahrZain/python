@@ -460,20 +460,15 @@ input[type=submit]:hover {
   border-radius: 5px;
   border: 2px solid black;
 }
+.card{
+  height: auto !important;
+}
 .email-input-box-button{
   background-color: transparent;
     color: white;
     border: none;
     padding-left: 62px;
 }
-@media only screen and (max-width:768px)
-{
-  .card{
-    display:flex;
-    color: red;
-  }
-}
-
 .product-info{
   display: flex;
   justify-content: space-evenly;
