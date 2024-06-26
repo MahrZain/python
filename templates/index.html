@@ -14,17 +14,46 @@
 <body>
   <main>
 
-    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
       <div class="carousel-inner">
+        {% for c in carousel %}
         <div class="carousel-item active">
-          <img src="{%static 'image/Eid_al_Adha_Web_Banner.webp'%}" class="d-block w-100" alt="..." />
+          <img src="media/{{c.image}}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{c.title}}</h5>
+            <p>{{c.caption}}</p>
+          </div>
         </div>
-        <div class="carousel-item">
-          <img src="{%static 'image/World_Cup_Pak_vs_US.webp'%}" class="d-block w-100" alt="..." />
+        {% endfor %}
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-inner">
+        {% for c in carousel %}
+        <div class="carousel-item active">
+          <img src="media/{{c.image}}" class="d-block w-100" alt="..." />
         </div>
-        <div class="carousel-item">
-          <img src="{%static 'image/Fathers-Day-Banne.webp'%}" class="d-block w-100" alt="..." />
-        </div>
+        {% endfor %}
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -34,10 +63,10 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    </div>
+    </div> -->
 
     <div class="heading">
-      <h3>Ice Blast</h3>
+      <h3>All Products</h3>
       <div class="lineofcontroll">
         <span style="
               display: inline-block;
@@ -47,35 +76,76 @@
         </span>
       </div>
 
-    <div class="row">
-      {% for product in products %}
-      <div class="col-md-3 col-sm-6">
-        <div class="card">
-          <img style="margin-left: 20%; margin-top: 3%; padding-bottom: 3%;" src="{{product.image}}"
-            class="card-img-top" alt="">
-          <div class="card-body">
-            <h5 class="card-title">{{product.title}}</h5>
-            <p class="card-text">{{product.description}}</p>
-            <h5>Price: {{product.price}}$</h5>
-            <div class="product-info">
-              <div class="sold-out">
-                <p>Solid: {{product.rating}}</p>
+      <div class="row">
+        {% for product in products %}
+        <div class="col-md-3 col-sm-6">
+          <div class="card">
+            <img style="margin-left: 20%; margin-top: 3%; padding-bottom: 3%;" src="media/{{product.image}}"
+              class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">{{product.title}}</h5>
+              <p class="card-text">{{product.description}}</p>
+              <h5>Price: {{product.price}}$</h5>
+              <div class="product-info">
+                <div class="sold-out">
+                  <p>Solid: {{product.rating}}</p>
+                </div>
+                <div class="rate">
+                  <img height="20px" width="20px" margin-top="25px"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAvNJREFUWEfdl1moTlEUx3/XnKG4MkYo4ZZ3SQnhwVAePSFTQq65pJQXRQmFInMeFcnwgJInb95METJlepAxQ5x/rVO77eyzz/6+r3u/rPo63zln7f/67zXtdVpoMmlpMj78l4SGATeA38B04H09Xm+Eh44AK42E/q/qTEKDgBdADyPxAxgBvKuVVL0e2gVs84zr2fbOINQPeAno6sonYAjwrRZS9XhoY0Zmr2P0CTDG7jcA+zuSUDfgGTDcMdoOHLD7V8Ao4FcqqVo9tBg45RnrDbxxQrgk89jpjiCkTdwHxnnG9NxN8ofABOBPCinfQ92ByVa6gy0582urhUgJ26vAiLD8NvDdvKYQfgDe2r2u+j0HbmdV+TPH8wldA2am7MjRzbGOA0sTMK4Ds0KEXgNDE8Bc1ZxQG3A3AUPFMTpEaB5wAeiaABjC6gso3ApjfpUnFjrYX4G5wM0QiJ5LQaRU2ikSq9gpwFWnCpVTIninyM2+YZE6DyjJq0oZIXn+HNDTwJQaU4FHPngZiNhfTiAVwlLPOgF0MeMiMcMq7J/NxtycQqoIayuw27Gq8AhT4SqUGCEtEsAlZ8SoirUD2Okoq7wXAF/KcqAKIa1XX1F/ScFaD+yzBeraE90GWHVXIb0twJ5EQjo27tkalfcAQANc0q5Cyqo4ubtMNBd99hQ0kuRNbzagk6AhhDS4D4xg6Vxa5DY54GA2zq6xdRpNFMa6CelUfxADct4fzTy1GdDkOMdah14rj8bHcKokteaakzEg771Od/WfW0Ys/wgYCzxOqYwiXe14RYTQYXu/2tNTQ5RXdGxI1mZn26F6CalSVDFF4ufNNOBM1iJGBvR1limMQYmFTIkc+hI9ZknqN7o+NlsvK7Cqslc1Bss/Rmg+cDGQH+q8ZaJB76xNna6eDu4roYUxQuucLwlhqFtvAj5WTPL+tl7tIJfST6QYITUz7VKfM8vLdhYhKK8oxDrxJwFPa/VQRUc0Ti3mocZZqojUdIT+AuM8fiW0NnX7AAAAAElFTkSuQmCC" />
+                  {{product.total_amount_products}}
+                </div>
               </div>
-              <div class="rate">
-                <img height="20px" width="20px" margin-top="25px"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAvNJREFUWEfdl1moTlEUx3/XnKG4MkYo4ZZ3SQnhwVAePSFTQq65pJQXRQmFInMeFcnwgJInb95METJlepAxQ5x/rVO77eyzz/6+r3u/rPo63zln7f/67zXtdVpoMmlpMj78l4SGATeA38B04H09Xm+Eh44AK42E/q/qTEKDgBdADyPxAxgBvKuVVL0e2gVs84zr2fbOINQPeAno6sonYAjwrRZS9XhoY0Zmr2P0CTDG7jcA+zuSUDfgGTDcMdoOHLD7V8Ao4FcqqVo9tBg45RnrDbxxQrgk89jpjiCkTdwHxnnG9NxN8ofABOBPCinfQ92ByVa6gy0582urhUgJ26vAiLD8NvDdvKYQfgDe2r2u+j0HbmdV+TPH8wldA2am7MjRzbGOA0sTMK4Ds0KEXgNDE8Bc1ZxQG3A3AUPFMTpEaB5wAeiaABjC6gso3ApjfpUnFjrYX4G5wM0QiJ5LQaRU2ikSq9gpwFWnCpVTIninyM2+YZE6DyjJq0oZIXn+HNDTwJQaU4FHPngZiNhfTiAVwlLPOgF0MeMiMcMq7J/NxtycQqoIayuw27Gq8AhT4SqUGCEtEsAlZ8SoirUD2Okoq7wXAF/KcqAKIa1XX1F/ScFaD+yzBeraE90GWHVXIb0twJ5EQjo27tkalfcAQANc0q5Cyqo4ubtMNBd99hQ0kuRNbzagk6AhhDS4D4xg6Vxa5DY54GA2zq6xdRpNFMa6CelUfxADct4fzTy1GdDkOMdah14rj8bHcKokteaakzEg771Od/WfW0Ys/wgYCzxOqYwiXe14RYTQYXu/2tNTQ5RXdGxI1mZn26F6CalSVDFF4ufNNOBM1iJGBvR1limMQYmFTIkc+hI9ZknqN7o+NlsvK7Cqslc1Bss/Rmg+cDGQH+q8ZaJB76xNna6eDu4roYUxQuucLwlhqFtvAj5WTPL+tl7tIJfST6QYITUz7VKfM8vLdhYhKK8oxDrxJwFPa/VQRUc0Ti3mocZZqojUdIT+AuM8fiW0NnX7AAAAAElFTkSuQmCC" />
-                {{product.total_amount_products}}
-              </div>
-            </div>
-            <a href="#" class="btn btn-primary">Buy Now!</a>
+              <a href="#" class="btn btn-primary">Buy Now!</a>
 
+            </div>
           </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-    </div>
-    </div>
     </div><!-- </div> all 1st Cards Main Div -->
+    <!-- 2nd Fashion Cards -->
+    <div class="heading">
+      <h3>Summer Men's Products</h3>
+      <div class="lineofcontroll">
+        <span style="
+              display: inline-block;
+              padding-bottom: 2px;
+              border-bottom: 3px solid black;
+            ">
+        </span>
+      </div>
+
+      <div class="row">
+        {% for product in products %}
+        {% if product.category == mens %}
+        <div class="col-md-3 col-sm-6">
+          <div class="card">
+            <img style="margin-left: 20%; margin-top: 3%; padding-bottom: 3%;" src="media/{{product.image}}"
+              class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">{{product.title}}</h5>
+              <p class="card-text">{{product.description}}</p>
+              <h5>Price: {{product.price}}$</h5>
+              <div class="product-info">
+                <div class="sold-out">
+                  <p>Solid: {{product.rating}}</p>
+                </div>
+                <div class="rate">
+                  <img height="20px" width="20px" margin-top="25px"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAvNJREFUWEfdl1moTlEUx3/XnKG4MkYo4ZZ3SQnhwVAePSFTQq65pJQXRQmFInMeFcnwgJInb95METJlepAxQ5x/rVO77eyzz/6+r3u/rPo63zln7f/67zXtdVpoMmlpMj78l4SGATeA38B04H09Xm+Eh44AK42E/q/qTEKDgBdADyPxAxgBvKuVVL0e2gVs84zr2fbOINQPeAno6sonYAjwrRZS9XhoY0Zmr2P0CTDG7jcA+zuSUDfgGTDcMdoOHLD7V8Ao4FcqqVo9tBg45RnrDbxxQrgk89jpjiCkTdwHxnnG9NxN8ofABOBPCinfQ92ByVa6gy0582urhUgJ26vAiLD8NvDdvKYQfgDe2r2u+j0HbmdV+TPH8wldA2am7MjRzbGOA0sTMK4Ds0KEXgNDE8Bc1ZxQG3A3AUPFMTpEaB5wAeiaABjC6gso3ApjfpUnFjrYX4G5wM0QiJ5LQaRU2ikSq9gpwFWnCpVTIninyM2+YZE6DyjJq0oZIXn+HNDTwJQaU4FHPngZiNhfTiAVwlLPOgF0MeMiMcMq7J/NxtycQqoIayuw27Gq8AhT4SqUGCEtEsAlZ8SoirUD2Okoq7wXAF/KcqAKIa1XX1F/ScFaD+yzBeraE90GWHVXIb0twJ5EQjo27tkalfcAQANc0q5Cyqo4ubtMNBd99hQ0kuRNbzagk6AhhDS4D4xg6Vxa5DY54GA2zq6xdRpNFMa6CelUfxADct4fzTy1GdDkOMdah14rj8bHcKokteaakzEg771Od/WfW0Ys/wgYCzxOqYwiXe14RYTQYXu/2tNTQ5RXdGxI1mZn26F6CalSVDFF4ufNNOBM1iJGBvR1limMQYmFTIkc+hI9ZknqN7o+NlsvK7Cqslc1Bss/Rmg+cDGQH+q8ZaJB76xNna6eDu4roYUxQuucLwlhqFtvAj5WTPL+tl7tIJfST6QYITUz7VKfM8vLdhYhKK8oxDrxJwFPa/VQRUc0Ti3mocZZqojUdIT+AuM8fiW0NnX7AAAAAElFTkSuQmCC" />
+                  {{product.total_amount_products}}
+                </div>
+              </div>
+              <a href="#" class="btn btn-primary">Buy Now!</a>
+
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div><!-- </div> all 2st Cards Main Div -->
     <div class="heading">
       <h3>Summer Skin Saviour</h3>
       <div class="lineofcontroll">

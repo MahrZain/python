@@ -1,5 +1,5 @@
 from django.db import models
-from static import *
+
 # Create your models here.
 class products(models.Model):
     title = models.CharField(max_length=60)
@@ -8,3 +8,4 @@ class products(models.Model):
     category = models.CharField(max_length=60)
     total_amount_products = models.IntegerField()
     rating = models.IntegerField()
+    image = models.FileField(max_length=100, upload_to="images/",null=True)
