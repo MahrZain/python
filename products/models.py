@@ -7,5 +7,5 @@ class products(models.Model):
     price = models.IntegerField()
     category = models.CharField(max_length=60)
     total_amount_products = models.IntegerField()
-    rating = models.IntegerField()
+    sale = models.IntegerField(blank=True , null=True)
     image = models.FileField(max_length=100, upload_to="images/",null=True)

@@ -31,7 +31,7 @@ body {
   color: white;
 }
 .container {
-  background-color:#E4E3E8;
+  background-color: #e4e3e8;
 }
 .primary-nav {
   height: auto;
@@ -40,11 +40,30 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.card-img-top{
+.card-img-top {
   width: 60%;
   height: 254px;
+  position: relative;
 }
+.main-sale {
+  display: flex;
+}
+.sale-off {
+  margin-left: 70%;
+    z-index: 1;
+    margin-top: 2%;
+    position: absolute;
+    width: 28%;
+    height: 6%;
+    background-color: black;
+}
+.sale-off p{
+  color: white;
+    /* margin-bottom: 2%; */
+    width: 100%;
+    margin-left: 3%;
 
+}
 .nav-menu {
   display: flex;
   justify-content: center;
@@ -224,7 +243,7 @@ body {
 .footer-nav3 address {
   padding-left: 114px;
 }
-.btn{
+.btn {
   justify-content: center;
 }
 .hr {
@@ -255,7 +274,7 @@ body {
 .copy-right :first-child {
   margin-right: 15px;
 }
-.main-img-header{
+.main-img-header {
   margin-right: -93px;
 }
 .copy-right a:nth-child(2) {
@@ -399,7 +418,7 @@ strike {
   position: absolute;
 }
 
-.announcement-text{
+.announcement-text {
   margin-top: 24px;
   /*padding-top: 40px; */
 }
@@ -429,38 +448,39 @@ strike {
 #carouselExampleRide {
   margin-top: 10px;
 }
-.main-heading{
-  text-align: center; 
+.main-heading {
+  text-align: center;
   display: block;
   margin-bottom: 100px;
 }
-.second-heading{
+.second-heading {
   font-style: bold;
 }
-.main-contact-h1{
+.main-contact-h1 {
   text-align: center;
   margin-bottom: 40px;
-
 }
-.sec-contact-p{
-text-align: center;
-margin-bottom: 50px;
+.sec-contact-p {
+  text-align: center;
+  margin-bottom: 50px;
 }
 /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
+input[type="text"],
+select,
+textarea {
   width: 100%; /* Full width */
-  padding: 12px; /* Some padding */ 
+  padding: 12px; /* Some padding */
   border: 1px solid #ccc; /* Gray border */
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
 /* Style the submit button with a specific background color etc */
-input[type=submit] {
-  background-color: #04AA6D;
+input[type="submit"] {
+  background-color: #04aa6d;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -469,7 +489,7 @@ input[type=submit] {
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover {
+input[type="submit"]:hover {
   background-color: #45a049;
 }
 
@@ -477,34 +497,34 @@ input[type=submit]:hover {
 .container-last {
   margin-top: 25px;
   border-radius: 5px;
-  background-color: #E4E3E8;
+  background-color: #e4e3e8;
   padding: 20px;
 }
-.button-main{
+.button-main {
   display: block;
 }
-.Send-button{
-  background-color: black; 
-  color:white;
+.Send-button {
+  background-color: black;
+  color: white;
   border: none;
   border-radius: none;
   justify-content: center;
   text-align: center;
   width: 20%;
 }
-.last-news-letter{
+.last-news-letter {
   background-color: black;
   height: 34vh;
   width: 100%;
   border-radius: 5px;
 }
-.news-letter-heading{
+.news-letter-heading {
   text-align: center;
   color: white;
   padding-top: 11px;
   padding-bottom: 20px;
 }
-.email-input-box{
+.email-input-box {
   padding-left: 27px;
   margin-left: 222px;
   width: 90vh;
@@ -512,24 +532,24 @@ input[type=submit]:hover {
   border-radius: 5px;
   border: 2px solid black;
 }
-.card{
+.card {
   /* height: 84vh !important; */
   margin-top: 10% !important;
 }
-.email-input-box-button{
+.email-input-box-button {
   background-color: transparent;
-    color: white;
-    border: none;
-    padding-left: 62px;
+  color: white;
+  border: none;
+  padding-left: 62px;
 }
-.product-info{
+.product-info {
   display: flex;
   justify-content: space-evenly;
 }
 .sold-out p {
   margin-top: 2px;
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
-.rate{
+.rate {
   padding-bottom: 34px;
 }
