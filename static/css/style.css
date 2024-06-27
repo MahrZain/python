@@ -193,12 +193,13 @@ body {
   display: inline-block;
 }
 .copy-right {
-  height: 8vh;
+  padding-top: 2.5%;
+  height: 10vh;
   float: right;
   background-color: #212121;
-    width: 100%;
-    padding-left: 973px;
-    margin-bottom: 31px;
+  width: 100%;
+  padding-left: 980px;
+  margin-bottom: 31px;
 }
 .copy-right a {
   text-decoration: none;
@@ -281,6 +282,14 @@ body {
 }
 .card-body {
   background-color: #e4e3e8;
+  text-align: center;
+}
+.btn-icon-text {
+  display: inline-flex;
+  align-items: center;
+}
+.btn-icon-text i {
+  margin-right: 10px;
 }
 .card-text {
   font-family: "Montserrat", sans-serif;
@@ -462,7 +471,8 @@ input[type=submit]:hover {
   border: 2px solid black;
 }
 .card{
-  height: auto !important;
+  /* height: 84vh !important; */
+  margin-top: 10% !important;
 }
 .email-input-box-button{
   background-color: transparent;

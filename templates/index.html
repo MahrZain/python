@@ -7,8 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-{% include 'header.html'%}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  {% include 'header.html'%}
 </head>
 
 <body>
@@ -46,116 +52,81 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
-    <!-- <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-      <div class="carousel-inner">
-        {% for c in carousel %}
-        <div class="carousel-item active">
-          <img src="media/{{c.image}}" class="d-block w-100" alt="..." />
-        </div>
-        {% endfor %}
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div> -->
-
+    
     <div class="heading">
       <h3>All Products</h3>
-      <div class="lineofcontroll">
-        <span style="
-              display: inline-block;
-              padding-bottom: 2px;
-              border-bottom: 3px solid black;
-            ">
-        </span>
-      </div>
 
-      <div class="row">
+
+      <div class="owl-carousel owl-theme">
         {% for product in products %}
-        <div class="col-md-3 col-sm-6">
-          <div class="card">
-            <img style="margin-left: 20%; margin-top: 3%; padding-bottom: 3%;" src="media/{{product.image}}"
-              class="card-img-top" alt="">
-            <div class="card-body">
-              <h5 class="card-title">{{product.title}}</h5>
-              <p class="card-text">{{product.description}}</p>
-              <h5>Price: {{product.price}}$</h5>
-              <div class="product-info">
-                <div class="sold-out">
-                  <p>Solid: {{product.rating}}</p>
-                </div>
-                <div class="rate">
-                  <img height="20px" width="20px" margin-top="25px"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAvNJREFUWEfdl1moTlEUx3/XnKG4MkYo4ZZ3SQnhwVAePSFTQq65pJQXRQmFInMeFcnwgJInb95METJlepAxQ5x/rVO77eyzz/6+r3u/rPo63zln7f/67zXtdVpoMmlpMj78l4SGATeA38B04H09Xm+Eh44AK42E/q/qTEKDgBdADyPxAxgBvKuVVL0e2gVs84zr2fbOINQPeAno6sonYAjwrRZS9XhoY0Zmr2P0CTDG7jcA+zuSUDfgGTDcMdoOHLD7V8Ao4FcqqVo9tBg45RnrDbxxQrgk89jpjiCkTdwHxnnG9NxN8ofABOBPCinfQ92ByVa6gy0582urhUgJ26vAiLD8NvDdvKYQfgDe2r2u+j0HbmdV+TPH8wldA2am7MjRzbGOA0sTMK4Ds0KEXgNDE8Bc1ZxQG3A3AUPFMTpEaB5wAeiaABjC6gso3ApjfpUnFjrYX4G5wM0QiJ5LQaRU2ikSq9gpwFWnCpVTIninyM2+YZE6DyjJq0oZIXn+HNDTwJQaU4FHPngZiNhfTiAVwlLPOgF0MeMiMcMq7J/NxtycQqoIayuw27Gq8AhT4SqUGCEtEsAlZ8SoirUD2Okoq7wXAF/KcqAKIa1XX1F/ScFaD+yzBeraE90GWHVXIb0twJ5EQjo27tkalfcAQANc0q5Cyqo4ubtMNBd99hQ0kuRNbzagk6AhhDS4D4xg6Vxa5DY54GA2zq6xdRpNFMa6CelUfxADct4fzTy1GdDkOMdah14rj8bHcKokteaakzEg771Od/WfW0Ys/wgYCzxOqYwiXe14RYTQYXu/2tNTQ5RXdGxI1mZn26F6CalSVDFF4ufNNOBM1iJGBvR1limMQYmFTIkc+hI9ZknqN7o+NlsvK7Cqslc1Bss/Rmg+cDGQH+q8ZaJB76xNna6eDu4roYUxQuucLwlhqFtvAj5WTPL+tl7tIJfST6QYITUz7VKfM8vLdhYhKK8oxDrxJwFPa/VQRUc0Ti3mocZZqojUdIT+AuM8fiW0NnX7AAAAAElFTkSuQmCC" />
-                  {{product.total_amount_products}}
-                </div>
+        <div class="item">
+          <div class="col-md-13">
+            <div class="card">
+              <img src="media/{{product.image}}"
+                class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title">{{product.title}}</h5>
+                <p class="card-text">{{product.description}}</p>
+                <h5>Price: {{product.price}}$</h5>
+                
+                <a href="#" class="btn btn-primary btn-icon-text"><i class='bx bxs-cart-add bx-sm'></i>Buy Now!</a>
               </div>
-              <a href="#" class="btn btn-primary">Buy Now!</a>
-
             </div>
           </div>
         </div>
-        {% endfor %}
-      </div>
+      {% endfor %}
+    </div>
     </div><!-- </div> all 1st Cards Main Div -->
     <!-- 2nd Fashion Cards -->
     <div class="heading">
-      <h3>Summer Men's Products</h3>
-      <div class="lineofcontroll">
-        <span style="
-              display: inline-block;
-              padding-bottom: 2px;
-              border-bottom: 3px solid black;
-            ">
-        </span>
+      <h3>Mens Hair Products</h3>
+      
       </div>
 
-      <div class="row">
+      <div class="owl-carousel owl-theme">
         {% for product in products %}
-        {% if product.category == mens %}
-        <div class="col-md-3 col-sm-6">
-          <div class="card">
-            <img style="margin-left: 20%; margin-top: 3%; padding-bottom: 3%;" src="media/{{product.image}}"
-              class="card-img-top" alt="">
-            <div class="card-body">
-              <h5 class="card-title">{{product.title}}</h5>
-              <p class="card-text">{{product.description}}</p>
-              <h5>Price: {{product.price}}$</h5>
-              <div class="product-info">
-                <div class="sold-out">
-                  <p>Solid: {{product.rating}}</p>
-                </div>
-                <div class="rate">
-                  <img height="20px" width="20px" margin-top="25px"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAvNJREFUWEfdl1moTlEUx3/XnKG4MkYo4ZZ3SQnhwVAePSFTQq65pJQXRQmFInMeFcnwgJInb95METJlepAxQ5x/rVO77eyzz/6+r3u/rPo63zln7f/67zXtdVpoMmlpMj78l4SGATeA38B04H09Xm+Eh44AK42E/q/qTEKDgBdADyPxAxgBvKuVVL0e2gVs84zr2fbOINQPeAno6sonYAjwrRZS9XhoY0Zmr2P0CTDG7jcA+zuSUDfgGTDcMdoOHLD7V8Ao4FcqqVo9tBg45RnrDbxxQrgk89jpjiCkTdwHxnnG9NxN8ofABOBPCinfQ92ByVa6gy0582urhUgJ26vAiLD8NvDdvKYQfgDe2r2u+j0HbmdV+TPH8wldA2am7MjRzbGOA0sTMK4Ds0KEXgNDE8Bc1ZxQG3A3AUPFMTpEaB5wAeiaABjC6gso3ApjfpUnFjrYX4G5wM0QiJ5LQaRU2ikSq9gpwFWnCpVTIninyM2+YZE6DyjJq0oZIXn+HNDTwJQaU4FHPngZiNhfTiAVwlLPOgF0MeMiMcMq7J/NxtycQqoIayuw27Gq8AhT4SqUGCEtEsAlZ8SoirUD2Okoq7wXAF/KcqAKIa1XX1F/ScFaD+yzBeraE90GWHVXIb0twJ5EQjo27tkalfcAQANc0q5Cyqo4ubtMNBd99hQ0kuRNbzagk6AhhDS4D4xg6Vxa5DY54GA2zq6xdRpNFMa6CelUfxADct4fzTy1GdDkOMdah14rj8bHcKokteaakzEg771Od/WfW0Ys/wgYCzxOqYwiXe14RYTQYXu/2tNTQ5RXdGxI1mZn26F6CalSVDFF4ufNNOBM1iJGBvR1limMQYmFTIkc+hI9ZknqN7o+NlsvK7Cqslc1Bss/Rmg+cDGQH+q8ZaJB76xNna6eDu4roYUxQuucLwlhqFtvAj5WTPL+tl7tIJfST6QYITUz7VKfM8vLdhYhKK8oxDrxJwFPa/VQRUc0Ti3mocZZqojUdIT+AuM8fiW0NnX7AAAAAElFTkSuQmCC" />
-                  {{product.total_amount_products}}
-                </div>
+        {% if product.category == "hair" %}
+        <div class="item">
+          <div class="col-md-13">
+            <div class="card">
+              <img src="media/{{product.image}}"
+                class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title">{{product.title}}</h5>
+                <p class="card-text">{{product.description}}</p>
+                <h5>Price: {{product.price}}$</h5>
+                
+                <a href="#" class="btn btn-primary btn-icon-text"><i class='bx bxs-cart-add bx-sm'></i>Buy Now!</a>
               </div>
-              <a href="#" class="btn btn-primary">Buy Now!</a>
-
             </div>
           </div>
         </div>
         {% endif %}
         {% endfor %}
-      </div>
-    </div><!-- </div> all 2st Cards Main Div -->
+    </div>
     <div class="heading">
-      <h3>Summer Skin Saviour</h3>
-      <div class="lineofcontroll">
-        <span style="
-              display: inline-block;
-              padding-bottom: 2px;
-              border-bottom: 3px solid black;
-            ">
-        </span>
-      </div>
+      <h3>Men's Trimmer</h3>
+      <div class="owl-carousel owl-theme">
+        {% for product in products %}
+        {% if product.category == "trimmer" %}
+        <div class="item">
+          <div class="col-md-13">
+            <div class="card">
+              <img src="media/{{product.image}}"
+                class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title">{{product.title}}</h5>
+                <p class="card-text">{{product.description}}</p>
+                <h5>Price: {{product.price}}$</h5>
+                
+                <a href="#" class="btn btn-primary btn-icon-text"><i class='bx bxs-cart-add bx-sm'></i>Buy Now!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
     </div>
 
   </main>
@@ -171,14 +142,34 @@
     </div><!-- /.last-news-letter -->
   </div>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
     crossorigin="anonymous"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script>$('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 5
+        }
+      }
+    })</script>
   {% include 'footer.html'%}
 </body>
 
