@@ -7,5 +7,5 @@ class banner(models.Model):
         max_length=100,
         upload_to="secbanner/",
         null=True,
-        help_text="Max Resolutions (1460 × 822)",
+        help_text="Max Resolutions (1460 × 822) Only One Image Will Be Shown at a Time! "
     )
