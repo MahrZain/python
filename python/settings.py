@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'products',
     'carousel',
-    'banner'
+    'banner',
+    'logo',
+    'announcement'
 ]
 
 MIDDLEWARE = [
