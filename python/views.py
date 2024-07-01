@@ -4,7 +4,7 @@ from carousel.models import carousel
 from banner.models import banner
 from logo.models import limage
 from announcement.models import Announcement
-
+from navbar.models import nav
 
 # Create Views Here
 def home(request):
@@ -13,14 +13,14 @@ def home(request):
     sec_banner = banner.objects.all()
     latest_logo = limage.objects.all()
     msg_text = Announcement.objects.all()
-    # buy_link = buy_now.objects.all()
+    nav_bar = nav.objects.all()
     data = {
         "products": pr_data,
         "carousel": car_data,
         "SB": sec_banner,
         "logo": latest_logo,
         "message": msg_text,
-        # "buy": buy_link,
+        "nav": nav_bar
     }
     return render(request, "index.html", data)
 

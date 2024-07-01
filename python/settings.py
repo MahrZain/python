@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'carousel',
     'banner',
     'logo',
-    'announcement'
+    'announcement',
+    'navbar'
 ]
 
 MIDDLEWARE = [

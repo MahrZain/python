@@ -137,10 +137,9 @@
             </div>
             <div class="nav-menu">
               <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'contact' %}">Contact us</a></li>
-                <li><a href="{% url 'faq' %}">FAQ</a></li>
+                {% for item in nav %}
+                <li><a href="{{item.url}}">{{item.menu}}</a></li>
+                {% endfor %}
                 <li><a href="">Search</a></li>
               </ul>
             </div>
