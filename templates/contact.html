@@ -10,44 +10,28 @@
     </p>
   </div>
   <div class="container w-50">
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-      <input type="name" name="name" class="form-control" id="name" />
-    </div>
+    <form class="row g-3">
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Name</label>
+        <input style="width: 98% !important; padding:2% !important; margin-top:1px !important;" name="name" type="text" class="form-control" id="inputEmail4">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Email</label>
+        <input name="email" type="email" class="form-control" id="inputPassword4">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Phone#</label>
+        <input name="phone" type="number" class="form-control" id="inputAddress" placeholder="03xx-xxxxxxx">
+      </div>
+      <div class="col-12">
+        <label for="message" class="form-label">Message</label>
+        <textarea name="message" rows="5" cols="5" id="message"></textarea>
+      </div>
 
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label"
-        >Email address</label
-      >
-      <input
-        type="email"
-        name="email"
-        class="form-control"
-        placeholder="name@example.com"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Phone#</label>
-      <input
-        type="number"
-        name="phone"
-        class="form-control"
-        id="phone"
-        placeholder="03xx-xxxxxxx"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label"
-        >Enter Your Message</label
-      >
-      <textarea
-        class="form-control"
-        name="message"
-        id="message"
-        rows="3"
-      ></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Send</button>
+      </div>
   </div>
+  </form>
 </main>
 {% include 'footer.html'%}
