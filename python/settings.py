@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'banner',
     'logo',
     'announcement',
-    'navbar'
+    'navbar',
+    'contact',
 ]
 
 MIDDLEWARE = [

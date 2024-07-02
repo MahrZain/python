@@ -5,6 +5,8 @@ from banner.models import banner
 from logo.models import limage
 from announcement.models import Announcement
 from navbar.models import nav
+from contact.models import Contact
+
 
 # Create Views Here
 def home(request):
@@ -20,7 +22,7 @@ def home(request):
         "SB": sec_banner,
         "logo": latest_logo,
         "message": msg_text,
-        "nav": nav_bar
+        "nav": nav_bar,
     }
     return render(request, "index.html", data)
 
@@ -34,6 +36,14 @@ def login(request):
 
 
 def contact(request):
+
+    name = request.GET.get('name')
+    email = request.GET.get('email')
+    phone = request.GET.get('phone')
+    message = request.GET.get('message')
+    contact = Contact(name=name, email=email, phone=phone, message=message)
+    contact.save()
+
     return render(request, "contact.html")
 
 
