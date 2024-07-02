@@ -43,7 +43,6 @@ def contact(request):
     message = request.GET.get('message')
     contact = Contact(name=name, email=email, phone=phone, message=message)
     contact.save()
-
     return render(request, "contact.html")
 
 
