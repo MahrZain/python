@@ -26,7 +26,17 @@ def home(request):
     }
     return render(request, "index.html", data)
 
-
+def contact(request):
+    return render(request, 'contact.html')
+def savcontact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        message = request.POST.get('message')
+        sav = Contact(name=name, email=email, phone=phone, message=message)
+        sav.save()
+    return render(request, 'contact.html')
 def about(request):
     return render(request, "about.html")
 
@@ -35,15 +45,6 @@ def login(request):
     return render(request, "login.html")
 
 
-def contact(request):
-
-    name = request.GET.get('name')
-    email = request.GET.get('email')
-    phone = request.GET.get('phone')
-    message = request.GET.get('message')
-    contact = Contact(name=name, email=email, phone=phone, message=message)
-    contact.save()
-    return render(request, "contact.html")
 
 
 def faq(request):

@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Contact
 
-# Create your views here.
+
+def contact(request):
+    return render(request, 'contact.html')
+    
+def savcontact(request):
+    pass

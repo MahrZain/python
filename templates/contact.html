@@ -10,7 +10,8 @@
     </p>
   </div>
   <div class="container w-50">
-    <form class="row g-3">
+    <form action="{% url 'savcontact' %}" method="POST" class="row g-3">
+      {% csrf_token %}
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Name</label>
         <input style="width: 98% !important; padding:2% !important; margin-top:1px !important;" name="name" type="text" class="form-control" id="inputEmail4">
