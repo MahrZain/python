@@ -28,6 +28,7 @@ def home(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
 def savcontact(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -37,6 +38,7 @@ def savcontact(request):
         sav = Contact(name=name, email=email, phone=phone, message=message)
         sav.save()
     return render(request, 'contact.html')
+
 def about(request):
     return render(request, "about.html")
 
