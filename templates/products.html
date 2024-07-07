@@ -9,25 +9,34 @@
 </head>
 
 <body>
-  <div class="card mb-3" style="max-width: 100%; margin: 5% !important;">
+  <div class="card mb-3">
     <div class="row g-0">
       <div class="col-md-6">
-        <img src="/media/{{product.image}}" width="100%" height="100%" class="img-fluid rounded-start" alt="...">
+        <img src="/media/{{product.image}}" class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-md-6">
         <div class="card-body">
           <h5 class="card-title">{{product.title}}</h5>
+          
+            <div class="cata-date d-flex">
+             <div class="catagory-product">
+              {% if product.category %}
+              <small><strong>Category: </strong>{{ product.category }}</small>
+              {% endif %}
+             
+             </div>
+             <div class="date-product">
+              {% if product.pub_date %}
+              <p class="card-text"><small class="text-body-secondary"><strong>Published Date: {{ product.pub_date }}</strong></small></p>
+              {% endif %}
+             </div>
+            </div>
+          
+          
           <p class="card-text">{{product.description}}</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam deserunt sit explicabo officiis eveniet
-            necessitatibus quos voluptatibus distinctio, autem animi perferendis dolore quasi voluptate! Labore illo
-            fugit repellendus ipsum provident.0</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam deserunt sit explicabo officiis eveniet
-            necessitatibus quos voluptatibus distinctio, autem animi perferendis dolore quasi voluptate! Labore illo
-            fugit repellendus ipsum provident.0</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam deserunt sit explicabo officiis eveniet
-            necessitatibus quos voluptatibus distinctio, autem animi perferendis dolore quasi voluptate! Labore illo
-            fugit repellendus ipsum provident.0</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam deserunt sit explicabo officiis eveniet necessitatibus quos voluptatibus distinctio, autem animi perferendis dolore quasi voluptate! Labore illo fugit repellendus ipsum provident.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam deserunt sit explicabo officiis eveniet necessitatibus quos voluptatibus distinctio, autem animi perferendis dolore quasi voluptate! Labore illo fugit repellendus ipsum provident.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam deserunt sit explicabo officiis eveniet necessitatibus quos voluptatibus distinctio, autem animi perferendis dolore quasi voluptate! Labore illo fugit repellendus ipsum provident.</p>
         </div>
       </div>
     </div>
