@@ -49,20 +49,20 @@ body {
   display: flex;
 }
 .sale-off {
+  margin-top: 1px;
   margin-left: 70%;
-    z-index: 1;
-    margin-top: 2%;
-    position: absolute;
-    width: 28%;
-    height: 6%;
-    background-color: black;
+  z-index: 1;
+  margin-top: 2%;
+  position: absolute;
+  width: 28%;
+  height: 7%;
+  background-color: black;
 }
-.sale-off p{
+.sale-off p {
   color: white;
-  padding-left: 5%;
-    width: 100%;
-    margin-left: 3%;
-
+  padding-left: 4%;
+  width: 100%;
+  margin-left: 3%;
 }
 .nav-menu {
   display: flex;
@@ -357,10 +357,49 @@ body {
   font-optical-sizing: auto;
   font-weight: 400px;
   font-style: normal;
-  /* overflow: hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
-  text-wrap: nowrap; */
+  text-wrap: nowrap;
   background-color: #e4e3e8;
+}
+.ccard-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  background-color: #e4e3e8;
+}
+.price-sale-display {
+  display: flex;
+}
+/* .sale-tag-for-products{
+  align-content: center;
+  padding-left: 150px;
+  font-size: 30px;
+  padding-top: 75px;
+  padding-top: 43px;
+} */
+.sale-tag-for-products {
+  width: 50%;
+}
+.final-sale-box {
+  background-color: #c00000;
+  border-radius: 3px;
+  color: white;
+  margin-top: 27%;
+  width: 40%;
+}
+.final-price-box {
+  color: #c00000;
+  font-size: 30px;
+  width: 50%;
+  margin-left: 17%;
+}
+.price-tag {
+  width: 50%;
+}
+.price-tag hr {
+  color: black;
 }
 .price {
   color: #ca4445;
@@ -581,14 +620,20 @@ input[type="submit"]:hover {
   box-sizing: border-box;
   width: 100%;
 }
-.card-title{
+.card-title {
   font-family: Montserrat, sans-serif;
-  font-size: 29px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  font-size: 15px;
 }
-.catagory-product{
-  
+.ccard-title {
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+}
+.catagory-product {
   margin-top: 17.4px;
 }
-.date-product{
+.date-product {
   margin: 0;
 }
