@@ -14,19 +14,19 @@
       {% csrf_token %}
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Name</label>
-        <input style="width: 98% !important; padding:2% !important; margin-top:1px !important;" name="name" type="text" class="form-control" id="inputEmail4">
+        <input style="width: 98% !important; padding:2% !important; margin-top:1px !important;" name="name" type="text" class="form-control" id="inputEmail4" required>
       </div>
       <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Email</label>
-        <input name="email" type="email" class="form-control" id="inputPassword4">
+        <input name="email" type="email" class="form-control" id="inputPassword4" required>
       </div>
       <div class="col-12">
         <label for="inputAddress" class="form-label">Phone#</label>
-        <input name="phone" type="number" class="form-control" id="inputAddress" placeholder="03xx-xxxxxxx">
+        <input name="phone" type="number" class="form-control" id="inputAddress" placeholder="03xx-xxxxxxx" required>
       </div>
       <div class="col-12">
         <label for="message" class="form-label">Message</label>
-        <textarea name="message" rows="5" cols="5" id="message"></textarea>
+        <textarea name="message" rows="5" cols="5" id="message" required></textarea>
       </div>
 
       <div class="col-12">

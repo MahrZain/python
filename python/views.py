@@ -35,8 +35,11 @@ def savcontact(request):
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         message = request.POST.get('message')
-        sav = Contact(name=name, email=email, phone=phone, message=message)
-        sav.save()
+        if not email or not email or not phone or not message:
+            return render(request, 'contact.html')
+        else:
+            sav = Contact(name=name, email=email, phone=phone, message=message)
+            sav.save()
     return render(request, 'contact.html')
 
 def about(request):
