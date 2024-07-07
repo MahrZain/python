@@ -46,8 +46,9 @@ def about(request):
 def login(request):
     return render(request, "login.html")
 
-
-
+def viewproducts(request, myid):
+    product = products.objects.filter(id=myid)
+    return render(request, "products.html" , {"product":product[0]})
 
 def faq(request):
     return render(request, "faq.html")

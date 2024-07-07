@@ -28,6 +28,7 @@ urlpatterns = [
     path('faq/', views.faq, name= 'faq' ),
     path('contact/', views.contact, name='contact' ),
     path('savcontact/', views.savcontact, name='savcontact' ),
+    path('products/<int:myid>', views.viewproducts, name='products' ),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
