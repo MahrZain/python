@@ -118,7 +118,7 @@
           </div>
           <div class="container">
             <div class="primary-nav">
-              <div class="dummy"></div>
+              <div class="dummy" style="padding-right: 22%;"></div>
               {% for lo in logo %}
               <img
                 class="main-img-header"
@@ -126,10 +126,13 @@
                 alt="darimooch-img"
               />
               {% endfor %}
-              <div class="seco-nav">
-                <span class="material-symbols-outlined"> person </span>
-                <span class="material-symbols-outlined"> shopping_bag </span>
-                <span class="material-symbols-outlined"> search </span>
+              <div class="d-flex seco-nav">
+                <span class="material-symbols-outlined" style="margin-top: 2%;"> person </span>
+                <span class="material-symbols-outlined" style="margin-top: 2%;"> shopping_bag </span>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
               </div>
             </div>
             <div class="nav-menu">
