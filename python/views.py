@@ -26,21 +26,24 @@ def home(request):
     }
     return render(request, "index.html", data)
 
+
 def contact(request):
-    return render(request, 'contact.html')
+    return render(request, "contact.html")
+
 
 def savcontact(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        message = request.POST.get('message')
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        message = request.POST.get("message")
         if not email or not email or not phone or not message:
-            return render(request, 'contact.html')
+            return render(request, "contact.html")
         else:
             sav = Contact(name=name, email=email, phone=phone, message=message)
             sav.save()
-    return render(request, 'contact.html')
+    return render(request, "contact.html")
+
 
 def about(request):
     return render(request, "about.html")
@@ -49,9 +52,11 @@ def about(request):
 def login(request):
     return render(request, "login.html")
 
+
 def viewproducts(request, myid):
     product = products.objects.filter(id=myid)
-    return render(request, "products.html" , {"product":product[0]})
+    return render(request, "products.html", {"product": product[0]})
+
 
 def faq(request):
     return render(request, "faq.html")

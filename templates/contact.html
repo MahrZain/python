@@ -13,16 +13,17 @@
     <form action="{% url 'savcontact' %}" method="POST" class="row g-3">
       {% csrf_token %}
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Name</label>
-        <input style="width: 98% !important; padding:2% !important; margin-top:1px !important;" name="name" type="text" class="form-control" id="inputEmail4" required>
+        <label for="name" class="form-label">Name</label>
+        <input style="padding: 6px; margin-top: 0; " name="name" type="text"
+          class="form-control" id="name" required>
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Email</label>
-        <input name="email" type="email" class="form-control" id="inputPassword4" required>
+        <label style="height: 40px !important;" for="email"  class="form-label">Email</label>
+        <input name="email" type="email" class="form-control" id="email" required>
       </div>
       <div class="col-12">
-        <label for="inputAddress" class="form-label">Phone#</label>
-        <input name="phone" type="number" class="form-control" id="inputAddress" placeholder="03xx-xxxxxxx" required>
+        <label for="phone" class="form-label">Phone#</label>
+        <input name="phone" type="number" class="form-control" id="phone" placeholder="03xx-xxxxxxx" required>
       </div>
       <div class="col-12">
         <label for="message" class="form-label">Message</label>

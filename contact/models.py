@@ -5,3 +5,7 @@ class Contact(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=100, null=True)
     message = models.TextField()
+    date = models.DateTimeField(auto_now_add=True, blank=True,null=True)
+    
+    def __str__(self):
+        return 'Message From: ' +  self.name  + ' - ' + self.email
