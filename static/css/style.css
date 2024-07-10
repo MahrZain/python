@@ -373,7 +373,10 @@ body {
 .price-sale-display {
   display: flex;
 }
-
+.bx-search-alt-2{
+  color: black;
+  padding-top: 5px;
+}
 
 .sale-tag-for-products {
   width: 50%;

@@ -45,8 +45,18 @@ def savcontact(request):
     return render(request, "contact.html")
 
 
+def search(request, mytitle):
+    query = request.GET.get("searched")
+    products.objects.filter(title=mytitle)
+    return render(request, "")
+
+
 def about(request):
-    return render(request, "about.html")
+    nav_bar = nav.objects.all()
+    data = {
+        "nav": nav_bar,
+    }
+    return render(request, "about.html", data)
 
 
 def login(request):
@@ -60,3 +70,11 @@ def viewproducts(request, myid):
 
 def faq(request):
     return render(request, "faq.html")
+
+
+def search(request):
+    result_get = request.GET.get('query')
+    result = products.objects.filter(title__icontains = result_get)
+    print(result)
+   
+    return render(request, "search.html", {'result':result})
