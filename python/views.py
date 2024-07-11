@@ -73,8 +73,6 @@ def faq(request):
 
 
 def search(request):
-    result_get = request.GET.get('query')
-    result = products.objects.filter(title__icontains = result_get)
-    print(result)
-   
-    return render(request, "search.html", {'result':result})
+    result = request.GET['query']
+    fresult = products.objects.filter(title__icontains = result)
+    return render(request, "search.html",{"fresult":fresult})

@@ -373,11 +373,20 @@ body {
 .price-sale-display {
   display: flex;
 }
-.bx-search-alt-2{
+.bx-search-alt-2 {
   color: black;
   padding-top: 5px;
 }
-
+.search-term-btn {
+  width: 9vw;
+  margin-left: 6px;
+  padding-left: 7px;
+}
+.search-btn {
+  border: none;
+  background-color: #e4e3e8;
+  color: black;
+}
 .sale-tag-for-products {
   width: 50%;
 }
