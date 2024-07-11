@@ -62,6 +62,20 @@ def about(request):
 def login(request):
     return render(request, "login.html")
 
+def loginUser(request):
+    return render(request, "login.html")
+
+def register(request):
+    return render(request, "register.html")
+
+def registerUser(request):
+    fname = request.POST['name']
+    lname = request.POST['lname']
+    email = request.POST['email']
+    password = request.POST['password']
+    print(fname, lname, email, password)
+    return render(request, "register.html")
+
 
 def viewproducts(request, myid):
     product = products.objects.filter(id=myid)

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+/* font-family: Montserrat, sans-serif; */
 body {
   padding: 0;
   margin: 0;
@@ -644,4 +645,42 @@ input[type="submit"]:hover {
 }
 .date-product {
   margin: 0;
+}
+#bg-col-bd {
+  background-color: #e4e3e8;
+  border-color: #b7b5b5;
+  border-radius: 0;
+  font-family: Montserrat, sans-serif;
+  height: 8vh;
+}
+#btn-sty-sub {
+  width: 8vw;
+  background-color: black !important;
+  color: white !important;
+  margin-top: 5%;
+}
+#btn-sty-sub:hover {
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(0, 0, 0) !important;
+}
+#btn2-sty-sub {
+  width: 12vw;
+  background-color: #f0f0f0 !important;
+  color: rgb(0, 0, 0) !important;
+  margin-top: 5%;
+  margin-left: 2%;
+  height: 39px;
+}
+#btn2-sty-sub:hover {
+  background-color: rgb(0, 0, 0) !important;
+  color: rgb(245, 245, 245) !important;
+}
+.h1-login {
+  text-align: center;
+}
+#btn-sty2-sub{
+  width: 12vw;
+    height: 39px;
+    margin-top: 5%;
+    margin-right: 2%;
 }
