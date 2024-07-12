@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from products.models import products
 from carousel.models import carousel
 from banner.models import banner
@@ -6,6 +6,9 @@ from logo.models import limage
 from announcement.models import Announcement
 from navbar.models import nav
 from contact.models import Contact
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 
 # Create Views Here
@@ -59,21 +62,35 @@ def about(request):
     return render(request, "about.html", data)
 
 
-def login(request):
+def login_view(request):
     return render(request, "login.html")
 
+
 def loginUser(request):
+    username = request.POST["username"]
+    password = request.POST["password"]
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        print('yes')
+        login(request, user)
+        messages.success(request, "Login Success!")
+        return redirect("home")
+
+    else:
+        print('no')
+        messages.error(request, "Login Failed! Check Username & Password!")
     return render(request, "login.html")
+
 
 def register(request):
     return render(request, "register.html")
 
+
 def registerUser(request):
-    fname = request.POST['name']
-    lname = request.POST['lname']
-    email = request.POST['email']
-    password = request.POST['password']
-    print(fname, lname, email, password)
+    username = request.POST["name"]
+    email = request.POST["email"]
+    password = request.POST["password"]
+    user = User.objects.create_user(username=username, email=email, password=password)
     return render(request, "register.html")
 
 
@@ -87,6 +104,6 @@ def faq(request):
 
 
 def search(request):
-    result = request.GET['query']
-    fresult = products.objects.filter(title__icontains = result)
-    return render(request, "search.html",{"fresult":fresult})
+    result = request.GET["query"]
+    fresult = products.objects.filter(title__icontains=result)
+    return render(request, "search.html", {"fresult": fresult})
