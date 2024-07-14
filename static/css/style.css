@@ -6,6 +6,17 @@ body {
   padding: 0;
   margin: 0;
 }
+/* Hide vertical scrollbar but keep scrolling */
+body {
+  overflow-y: scroll; /* Always show vertical scrollbar */
+}
+
+body::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just to avoid scrollbar space */
+}
+
+
 
 .announcement-head {
   margin: 0;
@@ -262,7 +273,7 @@ body {
   background-color: #212121;
   width: 100%;
   padding-left: 980px;
-  margin-bottom: 31px;
+  margin-bottom: 0;
 }
 .copy-right a {
   text-decoration: none;
@@ -684,3 +695,4 @@ input[type="submit"]:hover {
     margin-top: 5%;
     margin-right: 2%;
 }
+
