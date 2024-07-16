@@ -82,7 +82,7 @@ def loginUser(request):
 
     else:
         messages.error(request, "Login Failed! Check Username & Password!")
-    return render(request, "login.html")
+        return redirect("login")
 
 
 def register(request):
@@ -90,10 +90,11 @@ def register(request):
 
 
 def registerUser(request):
-    username = request.POST["name"]
+    first_name = request.POST["first_name"]
+    username = request.POST["username"]
     email = request.POST["email"]
     password = request.POST["password"]
-    user = User.objects.create_user(username=username, email=email, password=password)
+    user = User.objects.create_user(first_name=first_name,username=username, email=email, password=password)
     return render(request, "register.html")
 
 

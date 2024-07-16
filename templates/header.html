@@ -146,9 +146,9 @@
       <div class="popup-content">
         <span class="close">&times;</span>
         {% if user.is_authenticated %}
-        <p>Welcome! {{user.username}}</p>
-        <p>Login as: {{user.email}}</p>
-        <p>joined on: {{user.date_joined}}</p>
+        <p><strong>Welcome! {{user.username}}</p></strong>
+        <p><strong>Login as:</strong> {{user.email}}</p>
+        <p style="color: red;"><strong style="color: black;">Last login at:</strong> {{user.last_login}}</p>
         <a id="logoutBtn" href="/logout">Logout</a>
        {% else %}
         <a id="loginBtn" href="/login">Login</a>
