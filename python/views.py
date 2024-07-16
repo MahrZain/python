@@ -7,7 +7,7 @@ from announcement.models import Announcement
 from navbar.models import nav
 from contact.models import Contact
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 
@@ -65,19 +65,22 @@ def about(request):
 def login_view(request):
     return render(request, "login.html")
 
+def logoutUser(request):
+    logout(request)
+    return render(request, "login.html")
+
 
 def loginUser(request):
     username = request.POST["username"]
     password = request.POST["password"]
     user = authenticate(request, username=username, password=password)
     if user is not None:
-        print('yes')
+        request.session['username'] = user.username
+        request.session['email'] = user.email
         login(request, user)
-        messages.success(request, "Login Success!")
         return redirect("home")
 
     else:
-        print('no')
         messages.error(request, "Login Failed! Check Username & Password!")
     return render(request, "login.html")
 

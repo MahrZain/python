@@ -145,8 +145,16 @@
     <div id="popup" class="popup">
       <div class="popup-content">
         <span class="close">&times;</span>
+        {% if user.is_authenticated %}
+        <p>Welcome! {{user.username}}</p>
+        <p>Login as: {{user.email}}</p>
+        <p>joined on: {{user.date_joined}}</p>
+        <a id="logoutBtn" href="/logout">Logout</a>
+       {% else %}
         <a id="loginBtn" href="/login">Login</a>
         <a id="signupBtn" href="/register">Sign up</a>
+        
+        {% endif %}
       </div>
     </div>
   </div>
